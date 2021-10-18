@@ -39,13 +39,10 @@ export class AddEditUserComponent implements OnInit {
  console.log("user id for update :",this.user_id_update)
 
  if(Number(this.user_id_update) > 0){
-  
   //get particular user data function call
-  
   this.updateFormCreate(Number(this.user_id_update))
   } else{
     this.addFormCreate(NoTimeDate)
-  
   }
 
  
@@ -89,11 +86,21 @@ export class AddEditUserComponent implements OnInit {
        
       for(let i1 of this.UserListRead) {
        
-      this.registrationForm.controls["personalDetails"].setValue ({F_Name:i1["F_Name"],
-       M_Name:i1["M_Name"],L_Name:i1["L_Name"],Date_Of_Birth:i1["Date_Of_Birth"],U_Email:i1["U_Email"],Ph_Number:i1["Ph_Number"]});
+      this.registrationForm.controls["personalDetails"].setValue ({
+        F_Name:i1["F_Name"],
+        M_Name:i1["M_Name"],
+        L_Name:i1["L_Name"],
+        Date_Of_Birth:i1["Date_Of_Birth"],
+        U_Email:i1["U_Email"],
+        Ph_Number:i1["Ph_Number"]
+      });
      
-      this.registrationForm.controls["addrDetails"].setValue ({Addr_City:i1["Addr_City"],
-       Addr_State:i1["Addr_State"],Addr_Zip:i1["Addr_Zip"],U_Created_On:i1["U_Created_On"]});
+      this.registrationForm.controls["addrDetails"].setValue ({
+        Addr_City:i1["Addr_City"],
+        Addr_State:i1["Addr_State"],
+        Addr_Zip:i1["Addr_Zip"],
+        U_Created_On:i1["U_Created_On"]
+      });
       } 
       
       }

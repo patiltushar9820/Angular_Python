@@ -1,0 +1,27 @@
+<div style="padding-left: 400px;margin-top: 47px;">
+<div *ngIf="formSubmitted">
+    <h3 style="color: forestgreen;">{{userinput}}</h3>
+  </div>
+  <div *ngIf="!formSubmitted"> 
+    <h2 style="font-family:'Times New Roman', Times, serif;font-size: x-large;color: burlywood;">Following details submitted, please confirm and hit submit</h2><br>
+    <br/> <h3>Full Name: {{regForm.get('personalDetails').get('L_Name').value}} 
+                {{regForm.get('personalDetails').get('F_Name').value}}
+                {{regForm.get('personalDetails').get('M_Name').value}}
+                <br/><br>
+      Date Of Birth :{{regForm.get('personalDetails').get('Date_Of_Birth').value}}
+                <br/><br>
+      Email Id :{{regForm.get('personalDetails').get('U_Email').value}}
+                <br/><br>
+      Contact Number :{{regForm.get('personalDetails').get('Ph_Number').value}}
+      <br>
+    <br/>Address : {{regForm.get('addrDetails').get('Addr_City').value}}
+                  {{regForm.get('addrDetails').get('Addr_State').value}}
+                  {{regForm.get('addrDetails').get('Addr_Zip').value}}<br>
+    <br/>Created On :{{regForm.get('addrDetails').get('U_Created_On').value}}
+    <br/><br></h3>
+    <button mat-button matStepperPrevious style="color: black;width: 100px;height: 40px;">Back</button>
+    &nbsp;
+   
+    <button mat-button (click)="submit()" style="color: black;width: 100px;height: 40px;">Submit</button>
+  </div>
+</div>

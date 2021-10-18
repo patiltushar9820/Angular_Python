@@ -1,0 +1,43 @@
+<mat-label style="width: 900px;box-sizing: border-box; border: black;">User Details :</mat-label>
+<button md-raised-button aria-hidden="true" style="margin-left: 850px;width: 70px;" (click)="addUserdata()">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" >add_circle_outline </mat-icon>
+</button>
+
+<table mat-table [dataSource]="UserList" class="mat-elevation-z8" style=" position: absolute; border-radius: 2px; width: 1000px;color: black;border: black;">
+  
+    <ng-container matColumnDef="F_Name">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">Full Name (Last  First Middle) </th>
+      <td *matCellDef="let i" style="text-align: center;">{{i["L_Name"]}} {{i["F_Name"]}} {{i["M_Name"]}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="U_Created_On">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;"> Created On</th>
+      <td *matCellDef="let i" style="text-align: center;">{{i["U_Created_On"]}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="U_Email">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">Email</th>
+      <td *matCellDef="let i" style="text-align: center;">{{i["U_Email"]}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Addr_State">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">State</th>
+        <td *matCellDef="let i" style="text-align: center;">{{i["Addr_State"]}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">Action </th>
+        <td *matCellDef="let i" style="text-align: center;">
+          <button md-raised-button (click)="updateUserdata(i)" style="color: forestgreen;width: 60px;margin-right: 16px">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" >edit_outline</mat-icon>
+          </button>
+         <button md-raised-button (click)="deleteUserdata(i)" style="color:red;width: 60px;">
+           <mat-icon aria-hidden="false" aria-label="Example home icon" >delete</mat-icon>
+          </button> 
+        </td>
+    </ng-container>
+ 
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

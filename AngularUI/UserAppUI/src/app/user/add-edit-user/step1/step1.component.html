@@ -1,0 +1,32 @@
+<form [formGroup]="regForm" >
+<div formGroupName="personalDetails">
+  <mat-form-field appearance="fill">
+    <mat-label>First Name*</mat-label>
+    <input matInput placeholder="" formControlName="F_Name" >
+</mat-form-field><br>
+
+<mat-form-field appearance="fill">
+  <mat-label>Middle Name*</mat-label>
+  <input matInput placeholder="" formControlName="M_Name">
+</mat-form-field><br>
+
+<mat-form-field appearance="fill">
+  <mat-label>Last Name*</mat-label>
+  <input matInput placeholder="" formControlName="L_Name">
+</mat-form-field><br>
+<mat-form-field appearance="fill">
+  <mat-label>Date Of Birth [yyyy-mm-dd]*</mat-label>
+  <input matInput placeholder="" formControlName="Date_Of_Birth">
+</mat-form-field><br>
+<mat-form-field appearance="fill">
+  <mat-label>Email Id*</mat-label>
+  <input matInput placeholder="" formControlName="U_Email">
+</mat-form-field><br>
+<mat-form-field appearance="fill">
+  <mat-label>Contact Number*</mat-label>
+  <input matInput placeholder="" formControlName="Ph_Number">
+</mat-form-field><br>
+</div>
+</form>
+<button mat-button matStepperNext (click)="step1Submitted()" style="color: black;width: 100px;height: 40px;">Next</button>
+

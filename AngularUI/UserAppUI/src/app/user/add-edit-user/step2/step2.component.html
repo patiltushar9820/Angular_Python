@@ -1,0 +1,27 @@
+<form [formGroup]="regForm" >
+  <div formGroupName="addrDetails">
+    <mat-form-field appearance="fill">
+      <mat-label>City*</mat-label>
+      <input matInput placeholder="" formControlName="Addr_City">
+  </mat-form-field><br>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>State*</mat-label>
+    <input matInput placeholder="" formControlName="Addr_State">
+  </mat-form-field><br>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Zip Code*</mat-label>
+    <input matInput placeholder="" formControlName="Addr_Zip">
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Created On*</mat-label>
+    <input matInput placeholder="" formControlName="U_Created_On"  readonly>
+  </mat-form-field><br>
+  
+  </div>
+  </form>
+  <button mat-button matStepperPrevious style="color: black;width: 100px;height: 40px;">Back</button>
+  &nbsp;
+  <button mat-button matStepperNext (click)="step2Submitted()" style="color: black;width: 100px;height: 40px;">Next</button>
+

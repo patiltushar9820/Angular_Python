@@ -1,0 +1,19 @@
+select * from UserApp_users
+
+insert into UserApp_users values(1,"tushar","patil@gmail.com","maharashtra","10/10/2021");
+ 
+select * from UserApp_users
+
+{   
+    "UserId":2,
+    "U_Created_On":"2021-02-02",
+    "Addr_State":"mh",
+    "Addr_City":"nashik",
+    "Addr_Zip":"423104",
+    "Date_Of_Birth":"2020-02-02",
+    "F_Name":"nana",
+    "L_Name":"patil",
+    "M_Name":"suresh",
+    "Ph_Number":9325932898,
+    "U_Email":"patil@gmail.com"
+ }

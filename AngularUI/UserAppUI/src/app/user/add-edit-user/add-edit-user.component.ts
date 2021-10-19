@@ -11,10 +11,9 @@ import { SharedService } from 'src/app/shared.service';
 export class AddEditUserComponent implements OnInit {
 
   isLinear = false;
-  first1FormGroup: FormGroup;
+ 
   registrationForm: FormGroup;
-  secondFormGroup: FormGroup;
-
+  
   @Input() regForm: FormGroup;
   user_id_update:string
 
@@ -29,8 +28,6 @@ export class AddEditUserComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-  ///  this.today = Date.now('yyyy-M-d');
     var d = new Date(); 
 		var NoTimeDate = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); 
     console.log("date :",NoTimeDate)
@@ -42,14 +39,8 @@ export class AddEditUserComponent implements OnInit {
   //get particular user data function call
   this.updateFormCreate(Number(this.user_id_update))
   } else{
-    this.addFormCreate(NoTimeDate)
-  }
-
- 
- 
-
-  
-   
+      this.addFormCreate(NoTimeDate)
+    } 
   }
 
   addFormCreate(dt){
@@ -110,7 +101,7 @@ export class AddEditUserComponent implements OnInit {
 
 
     
-    this.registrationForm = new FormGroup({
+    this.registrationForm = new FormGroup ({
       'personalDetails': new FormGroup({
         'F_Name': new FormControl(null, Validators.required),
         'M_Name': new FormControl(null,Validators.required),

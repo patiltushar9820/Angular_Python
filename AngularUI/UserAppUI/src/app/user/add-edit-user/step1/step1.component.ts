@@ -20,9 +20,7 @@ export class Step1Component implements OnInit {
   @Input() regForm: FormGroup;
 
   ngOnInit(): void {
-
-    this.user_id_update= this.route.snapshot.params['data'];
-    console.log("user id for update step 1 :",this.user_id_update)
+  
   }
 
   step1Submitted() {

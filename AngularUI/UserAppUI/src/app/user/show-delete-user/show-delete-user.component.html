@@ -2,7 +2,7 @@
 <button md-raised-button aria-hidden="true" style="margin-left: 850px;width: 70px;" (click)="addUserdata()">
   <mat-icon aria-hidden="false" aria-label="Example home icon" >add_circle_outline </mat-icon>
 </button>
-
+<div class="container" style="align-items: center;">
 <table mat-table [dataSource]="UserList" class="mat-elevation-z8" style=" position: absolute; border-radius: 2px; width: 1000px;color: black;border: black;">
   
     <ng-container matColumnDef="F_Name">
@@ -40,4 +40,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
+</div>

@@ -22,7 +22,8 @@ import { Step1Component } from './user/add-edit-user/step1/step1.component';
 import { Step2Component } from './user/add-edit-user/step2/step2.component';
 import { Step3Component } from './user/add-edit-user/step3/step3.component';
 import { MatIconModule } from '@angular/material/icon';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
    MatIconModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     
     
   ],

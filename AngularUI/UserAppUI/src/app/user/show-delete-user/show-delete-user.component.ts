@@ -19,7 +19,7 @@ export class ShowDeleteUserComponent implements OnInit {
 
   user_id_update:string;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  //@ViewChild(MatPaginator) paginator: MatPaginator;
 
   displayedColumns: string[] = ['F_Name', 'U_Created_On','U_Email','Addr_State','Action'];
 

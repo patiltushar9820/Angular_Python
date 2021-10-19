@@ -71,7 +71,7 @@ export class Step3Component implements OnInit {
   //update user data
   updateUserdata(u_id){
     var phnumber=Number(this.regForm.value.personalDetails.Ph_Number)
-    console.log("no ",phnumber)
+   // console.log("no ",phnumber)
     var val ={
       "UserId":Number(u_id),
       "F_Name":this.regForm.value.personalDetails.F_Name,

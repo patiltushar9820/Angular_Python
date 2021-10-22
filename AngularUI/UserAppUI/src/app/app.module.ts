@@ -15,7 +15,7 @@ import {MatTableModule} from '@angular/material/table';
 
 import {MatStep, MatStepperModule} from '@angular/material/stepper';
 import {MatTabsModule} from '@angular/material/tabs';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatError, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Step1Component } from './user/add-edit-user/step1/step1.component';
@@ -24,6 +24,9 @@ import { Step3Component } from './user/add-edit-user/step3/step3.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,10 @@ import { MatNativeDateModule } from '@angular/material/core';
    MatIconModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+     MatNativeDateModule,
+    MatProgressBarModule,
+    MatPaginatorModule,
+   
     
     
   ],

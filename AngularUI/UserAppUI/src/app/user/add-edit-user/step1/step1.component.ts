@@ -15,14 +15,27 @@ export class Step1Component implements OnInit {
   formEditable:boolean=false
   public UserListRead:Array<Object>=[]
 
+  notedata:string;
   constructor(private service:SharedService,
     private route:ActivatedRoute) { }
   @Input() regForm: FormGroup;
+  charlength:number=0;
+  text:string = ''; 
 
-  ngOnInit(): void {
   
+
+  progress=0;
+  ngOnInit(): void {
+    
+
+  }
+  onKeyUp(x) { 
+    this.text = x.target.value ;
+    this.charlength=this.text.length;
+    this.progress=(this.charlength/1000)*100;
   }
 
+  
   step1Submitted() {
     this.regForm.get('personalDetails').get('F_Name').markAsTouched();
     this.regForm.get('personalDetails').get('F_Name').updateValueAndValidity();
@@ -36,6 +49,8 @@ export class Step1Component implements OnInit {
     this.regForm.get('personalDetails').get('U_Email').updateValueAndValidity();
     this.regForm.get('personalDetails').get('Ph_Number').markAsTouched();
     this.regForm.get('personalDetails').get('Ph_Number').updateValueAndValidity();
+    this.regForm.get('personalDetails').get('Notes1').markAsTouched();
+    this.regForm.get('personalDetails').get('Notes1').updateValueAndValidity();
   }
 
 }

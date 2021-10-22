@@ -1,27 +1,41 @@
-<form [formGroup]="regForm" >
-  <div formGroupName="addrDetails">
-    <mat-form-field appearance="fill">
-      <mat-label>City*</mat-label>
-      <input matInput placeholder="" formControlName="Addr_City">
+<div class="container" style="height: auto; display: flex;justify-content: center;align-items: center;">
+<form [formGroup]="regForm" novalidate>
+  <div formGroupName="addrDetails" >
+
+  <mat-label><h2>Address Line 1*</h2></mat-label>
+  <mat-form-field appearance="fill" style="width: 300px;">
+      <input matInput placeholder="" formControlName="Addr_line_1" required>
+      <mat-error> Enter your valid Address line 1</mat-error> 
+  </mat-form-field><br>  
+  
+  <mat-label><h2>City*</h2></mat-label>
+  <mat-form-field appearance="fill" style="width: 300px;">
+      <input matInput placeholder="" formControlName="Addr_City" required>
+      <mat-error> Enter your valid city name </mat-error> 
   </mat-form-field><br>
   
-  <mat-form-field appearance="fill">
-    <mat-label>State*</mat-label>
-    <input matInput placeholder="" formControlName="Addr_State">
+  <mat-label><h2>State*</h2></mat-label>
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <input matInput placeholder="" formControlName="Addr_State" required>
+    <mat-error> Enter your valid State name </mat-error> 
   </mat-form-field><br>
   
-  <mat-form-field appearance="fill">
-    <mat-label>Zip Code*</mat-label>
-    <input matInput placeholder="" formControlName="Addr_Zip">
+  <mat-label><h2>Zip Code*</h2></mat-label>
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <input matInput placeholder="" formControlName="Addr_Zip" required>
+    <mat-error> Zip code must be only 6 digit number </mat-error>
   </mat-form-field><br>
-  <mat-form-field appearance="fill">
-    <mat-label>Created On*</mat-label>
+
+  <mat-label><h2>Created On*</h2></mat-label>
+  <mat-form-field appearance="fill" style="width: 300px;">
     <input matInput placeholder="" formControlName="U_Created_On"  readonly>
   </mat-form-field><br>
   
   </div>
   </form>
-  <button mat-button matStepperPrevious style="color: black;width: 100px;height: 40px;">Back</button>
-  &nbsp;
-  <button mat-button matStepperNext (click)="step2Submitted()" style="color: black;width: 100px;height: 40px;">Next</button>
-
+  </div>
+  <div class="container" style="height: auto; display: flex;justify-content: center;align-items: center;">
+  <button mat-button matStepperPrevious style="color: black;width: 100px;height: 40px;"><h2>Back</h2></button>
+  &nbsp;&nbsp;
+  <button mat-button matStepperNext (click)="step2Submitted()" style="color: black;width: 100px;height: 40px;"><h2>Next</h2></button>
+</div>

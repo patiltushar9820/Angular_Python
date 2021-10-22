@@ -1,34 +1,65 @@
-<form [formGroup]="regForm" >
-<div formGroupName="personalDetails">
-  <mat-form-field appearance="fill">
-    <mat-label>First Name*</mat-label>
-    <input matInput placeholder="" formControlName="F_Name" >
+
+
+<div class="container" style="height: auto; display: flex;justify-content: center;align-items: center;">
+  
+
+<form [formGroup]="regForm" novalidate>
+<div formGroupName="personalDetails" >
+
+  <mat-label ><h2>Autocomplete field First Name* </h2></mat-label>
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <input matInput placeholder="" formControlName="Auto_F_Name" >
+    
 </mat-form-field><br>
 
-<mat-form-field appearance="fill">
-  <mat-label>Middle Name*</mat-label>
-  <input matInput placeholder="" formControlName="M_Name">
+  <mat-label ><h2>First Name* </h2></mat-label>
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <input matInput placeholder="" formControlName="F_Name" required>
+    <mat-error> Enter your valid first name </mat-error> 
 </mat-form-field><br>
 
-<mat-form-field appearance="fill">
-  <mat-label>Last Name*</mat-label>
-  <input matInput placeholder="" formControlName="L_Name">
+<mat-label><h2>Middle Name*</h2></mat-label>
+<mat-form-field appearance="fill" style="width: 300px;">
+  <input matInput placeholder="" formControlName="M_Name" required>
+  <mat-error> Enter your valid middle name </mat-error> 
 </mat-form-field><br>
 
-<mat-form-field appearance="fill">
-  <mat-label>Date Of Birth [yyyy-mm-dd]*</mat-label>
-  <input matInput placeholder="" formControlName="Date_Of_Birth">
+<mat-label ><h2>Last Name* </h2></mat-label>
+<mat-form-field appearance="fill" style="width: 300px;">
+  <input matInput placeholder="" formControlName="L_Name" required>
+  <mat-error> Enter your valid last name </mat-error> 
+</mat-form-field><br>
+
+<mat-label><h2>Date Of Birth*</h2></mat-label>
+<mat-form-field appearance="fill" style="width: 300px;">
+  <input matInput [matDatepicker]="picker" formControlName="Date_Of_Birth" required>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+ <mat-datepicker #picker></mat-datepicker>
+</mat-form-field><br>
+
+<mat-label><h2>Email Id*</h2></mat-label>
+<mat-form-field appearance="fill" style="width: 300px;">
+  <input matInput placeholder="" formControlName="U_Email" required>
+  <mat-error> Email id must end with @gmail.com </mat-error>
+</mat-form-field><br>
+
+<mat-label><h2>Contact Number*</h2></mat-label>
+<mat-form-field appearance="fill" style="width: 300px;">
+  <input matInput placeholder="" formControlName="Ph_Number" required>
+  <mat-error> phone number must be only 10 digit number </mat-error>  
+</mat-form-field><br>
+
+<mat-label><h2>Notes*</h2></mat-label>
+<mat-form-field appearance="fill" style="width: 300px;">
+  <input matInput placeholder="" formControlName="Notes1" (keyup)="onKeyUp($event)" required>
+  <mat-error> Enter your valid Notes information </mat-error> 
 </mat-form-field>
-<br>
-<mat-form-field appearance="fill">
-  <mat-label>Email Id*</mat-label>
-  <input matInput placeholder="" formControlName="U_Email">
-</mat-form-field><br>
-<mat-form-field appearance="fill">
-  <mat-label>Contact Number*</mat-label>
-  <input matInput placeholder="" formControlName="Ph_Number">
-</mat-form-field><br>
-</div>
-</form>
-<button mat-button matStepperNext (click)="step1Submitted()" style="color: black;width: 100px;height: 40px;">Next</button>
 
+<mat-progress-bar  style="height: 8px;" mode="determinate" [value]="progress"></mat-progress-bar>
+<br>
+</div>
+</form> 
+</div>
+<div class="container" style="height: auto; display: flex;justify-content: center;align-items: center;">
+<button mat-button matStepperNext (click)="step1Submitted()" style="color: black;width: 100px;height: 40px;"><h2>Next</h2></button>
+</div>

@@ -8,8 +8,8 @@ const routes: Routes = [
   
   {path:'',redirectTo:'user',pathMatch:'full'},
   {path:'user', component:UserComponent},
-  {path:'user/:data',component:AddEditUserComponent},
-  {path:'user/adduser/',component:AddEditUserComponent}
+  {path:'user/updateuser/:data',component:AddEditUserComponent},
+  {path:'user/adduser',component:AddEditUserComponent},
 ];
 
 @NgModule({

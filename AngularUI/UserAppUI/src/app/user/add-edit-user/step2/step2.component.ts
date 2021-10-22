@@ -26,6 +26,9 @@ export class Step2Component implements OnInit {
   }
 
   step2Submitted() {
+    this.regForm.get('addrDetails').get('Addr_line_1').markAsTouched();
+    this.regForm.get('addrDetails').get('Addr_line_1').updateValueAndValidity();
+    
     this.regForm.get('addrDetails').get('Addr_City').markAsTouched();
     this.regForm.get('addrDetails').get('Addr_City').updateValueAndValidity();
 

@@ -15,17 +15,17 @@ export class SharedService {
     return this.http.get<Array<string>[]>(this.api_url + '/user/');
   }
 
-  getParticularUserData(val):Observable<Array<Object>>{
+  getParticularUserData(val:number):Observable<Array<Object>>{
     return this.http.get<Array<string>[]>(this.api_url + '/user/'+val);
   }
 
 
-  addUserData(val){
+  addUserData(val:Object){
     return this.http.post(this.api_url + '/user/adduser/',val);
   }
 
-  updateUserData(val){
-    return this.http.put(this.api_url + '/user/',val);
+  updateUserData(val:Object){
+    return this.http.put(this.api_url + '/user/updateuser/',val);
   }
 
   deleteUserData(val:string){

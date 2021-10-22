@@ -11,6 +11,8 @@ class UserSerializer(serializers.ModelSerializer):
                 'Date_Of_Birth',
                 'U_Email',
                 'Ph_Number',
+                'Notes1',
+                'Addr_line_1',
                 'Addr_City',
                 'Addr_State',
                 'Addr_Zip',

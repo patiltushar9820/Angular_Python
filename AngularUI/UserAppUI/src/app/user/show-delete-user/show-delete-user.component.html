@@ -1,10 +1,14 @@
-<mat-label style="width: 900px;box-sizing: border-box; border: black;">User Details :</mat-label>
-<button md-raised-button aria-hidden="true" style="margin-left: 850px;width: 70px;" (click)="addUserdata()">
-  <mat-icon aria-hidden="false" aria-label="Example home icon" >add_circle_outline </mat-icon>
-</button>
-<div class="container" style="align-items: center;">
-<table mat-table [dataSource]="UserList" class="mat-elevation-z8" style=" position: absolute; border-radius: 2px; width: 1000px;color: black;border: black;">
-  
+<div class="container" style="display: flex;justify-content: center;align-items: center;">
+
+<mat-form-field>
+  <input (keyup)="applySearch($event.target.value)" matInput placeholder="Filter" >
+</mat-form-field>
+</div>
+<mat-icon aria-hidden="false" (click)="addUserdata()" style="display: flex; margin-left:auto; margin-right: 370px; margin-bottom: 10px;">add</mat-icon>
+<div class="container" style="display: flex;justify-content: center;align-items: center;">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style=" width: 1200px;">
+
     <ng-container matColumnDef="F_Name">
       <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">Full Name (Last  First Middle) </th>
       <td *matCellDef="let i" style="text-align: center;">{{i["L_Name"]}} {{i["F_Name"]}} {{i["M_Name"]}}</td>
@@ -20,6 +24,11 @@
       <td *matCellDef="let i" style="text-align: center;">{{i["U_Email"]}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="Date_Of_Birth">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">Date Of Birth</th>
+      <td *matCellDef="let i" style="text-align: center;">{{i["Date_Of_Birth"] | date}}</td>
+    </ng-container>
+
     <ng-container matColumnDef="Addr_State">
         <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">State</th>
         <td *matCellDef="let i" style="text-align: center;">{{i["Addr_State"]}}</td>
@@ -28,16 +37,19 @@
     <ng-container matColumnDef="Action">
         <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">Action </th>
         <td *matCellDef="let i" style="text-align: center;">
-          <button md-raised-button (click)="updateUserdata(i)" style="color: forestgreen;width: 60px;margin-right: 16px">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" >edit_outline</mat-icon>
-          </button>
-         <button md-raised-button (click)="deleteUserdata(i)" style="color:red;width: 60px;">
-           <mat-icon aria-hidden="false" aria-label="Example home icon" >delete</mat-icon>
-          </button> 
+          <mat-icon (click)="updateUserdata(i)" >edit_outline </mat-icon>
+          &nbsp;&nbsp;&nbsp;
+          <mat-icon (click)="deleteUserdata(i)">delete_outline </mat-icon>
         </td>
     </ng-container>
- 
+    
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
 </div>
+<mat-paginator  style="display: flex;justify-content: center;align-items: center;"
+                [pageSizeOptions]="[2, 4,10]"
+                 showFirstLastButtons 
+                 aria-label="Select page of user">
+</mat-paginator>
